@@ -3,6 +3,7 @@
   "plugins": [
     "iam",
     "api-gateway",
-    "node-lambda"
+    "node-lambda",
+    "plugin-inspector"
   ]
 }
