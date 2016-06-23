@@ -76,6 +76,14 @@ Lager.prototype.getPlugin = function getPlugin(name) {
 };
 
 /**
+ * Retrieve the list of registered plugin identifiers
+ * @returns {Array}
+ */
+Lager.prototype.getRegisteredPluginNames = function getRegisteredPluginNames() {
+  return _.map(this.plugins, plugin => { return plugin.name; });
+};
+
+/**
  * Fire a hook/event
  * @param {string} eventName - the name of the hook
  * @param {...*} arg - the list of arguments provided to the hook

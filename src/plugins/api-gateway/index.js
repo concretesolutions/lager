@@ -322,7 +322,10 @@ const plugin = {
   loadEndpoints,
   deploy,
   findApi,
-  findEndpoint
+  findEndpoint,
+  getAwsPermissions() {
+    return require('./aws-permissions');
+  }
 };
 
 module.exports = plugin;
