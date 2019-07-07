@@ -11,7 +11,8 @@
     "bunyan": "^1.8.3",
     "figlet": "^1.1.2",
     "lodash": "^4.13.1",
-    "pebo": "0.0.2"
+    "pebo": "0.0.2",
+    "snyk": "^1.192.3"
   },
   "devDependencies": {
     "bithound": "^1.3.0",
@@ -50,6 +51,9 @@
     "test-ci": "NODE_ENV=test istanbul cover --include-all-sources=true ./node_modules/mocha/bin/_mocha --report lcovonly -- --recursive && codecov",
     "eslint": "eslint --ignore-path .gitignore **/*.js && echo \"  JS lint passed\n\"; exit 0",
     "mdlint": "remark -qf . && echo \"  Markdown lint passed\n\"; exit 0",
-    "lint": "eslint --ignore-path .gitignore **/*.js && remark -qf . && echo \"  JS lint and markdown lint passed\n\"; exit 0"
-  }
+    "lint": "eslint --ignore-path .gitignore **/*.js && remark -qf . && echo \"  JS lint and markdown lint passed\n\"; exit 0",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
